@@ -10,4 +10,8 @@ let finalAmount = document.getElementById("finalAmount");
 let resultFrom;
 let resultTo;
 let searchValue;
+
+fromCurrecy.addEventListener('change', (event) => {
+    resultFrom = `${event.target.value}`;
+});
   
