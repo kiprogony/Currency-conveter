@@ -22,6 +22,12 @@ search.addEventListener('input', updateValue);
 
 function updateValue(e) {
   searchValue = e.target.value;
+//function to get the results
+function getResults() {
+    fetch(`${api}`)
+        .then(currency => {
+            return currency.json();
+        }).then(displayResults);
 }
 
 convert.addEventListener("click",getResults);
@@ -33,5 +39,17 @@ function displayResults(currency) {
        ((toRate / fromRate) * searchValue).toFixed(2);
     finalAmount.style.display = "block";
 }
+// display results
+function displayResults(currency) {
+    let fromRate = currency.rates[resultFrom];
+    let toRate = currency.rates[resultTo];
+    finalValue.innerHTML = 
+       ((toRate / fromRate) * searchValue).toFixed(2);
+    finalAmount.style.display = "block";
+}
 
+function clearVal() {
+  window.location.reload();
+  document.getElementsByClassName("finalValue").innerHTML = "";
+}
   
