@@ -90,7 +90,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text">To</span>
             </div>
-            <select class="form-control to" id="sel2">
+            <select class="form-control to" id="currency2">
               <option value="">Select One …</option>
               <option value="USD">USD</option>
               <option value="AED">AED</option>
@@ -149,7 +149,26 @@
         </div>
       </div>
 
-      <div c
+      <div class="tect-center">
+        <!-- Butteon to convert -->
+        <button class="btn btn-primary convert m-2" type="submit">
+          Convert
+        </button>
+        <!-- Button to reset -->
+        <button class="btn btn-primary m-2" type="submit">
+          Reset
+        </button>
+      </div>
+
   </div>
+  <div id="finalAmount" class="text-center">
+      <!-- The converter amount to be displayed -->
+    <h2>Converted Amount :
+      <span class="finalValue" style="color: green;">
+      </span>
+    </h2>
+  </div>
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>
