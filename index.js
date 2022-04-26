@@ -18,28 +18,24 @@ fromCurrecy.addEventListener('change', (event) => {
 toCurrecy.addEventListener('change', (event) => {
     resultTo = `${event.target.value}`;
 });
+
 search.addEventListener('input', updateValue);
 
 function updateValue(e) {
-  searchValue = e.target.value;
+    searchValue = e.target.value;
+}
+
+convert.addEventListener("click", getResults);
+
 //function to get the results
 function getResults() {
-    fetch(`${api}`)
+    fetch(`${theApi}`)
         .then(currency => {
             return currency.json();
         }).then(displayResults);
 }
 
-convert.addEventListener("click",getResults);
  //function to get the results after convertion
-function displayResults(currency) {
-    let fromRate = currency.rates[resultFrom];
-    let toRate = currency.rates[resultTo];
-    finalValue.innerHTML = 
-       ((toRate / fromRate) * searchValue).toFixed(2);
-    finalAmount.style.display = "block";
-}
-// display results
 function displayResults(currency) {
     let fromRate = currency.rates[resultFrom];
     let toRate = currency.rates[resultTo];
@@ -51,5 +47,5 @@ function displayResults(currency) {
 function clearVal() {
   window.location.reload();
   document.getElementsByClassName("finalValue").innerHTML = "";
-}
+};
   
