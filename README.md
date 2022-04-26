@@ -6,3 +6,5 @@ This apllication allows users to convert and calculate an amount to a different 
     HTML
     CSS
     JAVASCRIPT
+    
+In the application exchange-rate api has been intergreted into the site.
